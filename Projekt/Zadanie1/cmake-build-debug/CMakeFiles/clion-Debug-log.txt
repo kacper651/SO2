@@ -1,0 +1,4 @@
+Cannot generate into \\wsl.localhost\Ubuntu\home\kacper\SO2\Projekt\Zadanie1
+It is already used for project \\wsl$\Ubuntu\home\kacper\SO2\Projekt\Zadanie1
+
+Please either delete it manually or select another generation directory
