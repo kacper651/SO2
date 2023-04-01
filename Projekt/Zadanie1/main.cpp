@@ -16,9 +16,9 @@ const int SAMPLE_TIME = 10;     // Time in seconds between each sample of the st
 std::mutex chopsticks[NUM_PHILOSOPHERS];
 std::mutex outputMutex;
 
-// Arrays to keep track of how long each philosopher has been eating and thinking
-int eatingCount[NUM_PHILOSOPHERS] = {0};
-int thinkingCount[NUM_PHILOSOPHERS] = {0};
+// Arrays to keep track of how long each philosopher has been eating and thinking in seconds
+int eatingDuration[NUM_PHILOSOPHERS] = {0};
+int thinkingDuration[NUM_PHILOSOPHERS] = {0};
 
 // Array with philosopher names to humanize the output :)
 std::string philosopherNames[NUM_PHILOSOPHERS] = {"Aristotle",
@@ -26,6 +26,7 @@ std::string philosopherNames[NUM_PHILOSOPHERS] = {"Aristotle",
                                                   "Socrates",
                                                   "Descartes",
                                                   "Kant"};
+
 
 // Custom print function to ensure that only one thread can print at a time
 void print(const std::string &message, int line) {
@@ -43,8 +44,8 @@ void printStatistics() {
     print("Philosopher statistics:", startLine);
     for (int i = 0; i < NUM_PHILOSOPHERS; i++) {
         std::string stats = philosopherNames[i] + " ate for " +
-                            std::to_string(eatingCount[i]) + " seconds and thought for " +
-                            std::to_string(thinkingCount[i]) + " seconds.";
+                            std::to_string(eatingDuration[i]) + " seconds and thought for " +
+                            std::to_string(thinkingDuration[i]) + " seconds.";
         print(stats, startLine + i + 1);
     }
 }
@@ -62,7 +63,7 @@ void philosopher(int id, bool &stop) {
         // Think
         print(philosopherNames[id] + " is thinking", id);
         std::this_thread::sleep_for(std::chrono::seconds(thinkingTimeDist(gen)));
-        thinkingCount[id]++;
+        thinkingDuration[id]++;
 
         // Pick up chopsticks
         chopsticks[id].lock();
@@ -73,7 +74,7 @@ void philosopher(int id, bool &stop) {
         // Eat
         print(philosopherNames[id] + " is eating", id);
         std::this_thread::sleep_for(std::chrono::seconds(eatingTimeDist(gen)));
-        eatingCount[id]++;
+        eatingDuration[id]++;
 
         // Put down chopsticks
         chopsticks[id].unlock();
