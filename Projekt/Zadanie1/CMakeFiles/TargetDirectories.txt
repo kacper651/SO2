@@ -1,3 +1,0 @@
-/home/kacper/SO2/Projekt/Zadanie1/CMakeFiles/SO2.dir
-/home/kacper/SO2/Projekt/Zadanie1/CMakeFiles/edit_cache.dir
-/home/kacper/SO2/Projekt/Zadanie1/CMakeFiles/rebuild_cache.dir
