@@ -8,3 +8,5 @@ include_directories(${CURSES_INCLUDE_DIR})
 
 add_executable(SO2 main.cpp main.cpp main.cpp main.cpp)
 target_link_libraries(SO2 ${CURSES_LIBRARIES})
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pthread")
+

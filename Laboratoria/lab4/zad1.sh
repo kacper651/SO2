@@ -23,4 +23,4 @@
 # Znaleźć położenie pliku o nazwie `mutex.c` – czyli wyświetlić po prostu
 # ścieżkę względną do tego pliku, nic ponadto.
 #
-find . -name "mutex.c" | sed 's|^./||'
+find linux-5.11.13/ -name "mutex.c"

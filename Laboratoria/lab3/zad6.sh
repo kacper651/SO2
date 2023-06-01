@@ -21,9 +21,10 @@
 # wskazują na jakiś cel przy pomocy ścieżki bezwzględnej. Wyświetlić ścieżki
 # z takich dowiązań, ale poprawione w taki sposób, aby były one ścieżkami
 # kanonicznymi. Element wskazywany przez dowiązanie nie musi istnieć.
-#
+#././dane/pierwiastku/Alluminium
+#/root/kacper/SO2/
 for file in dane/pierwiastki/*; do
-    if [ -L "$file" ]; then
+    if [ -L "$file" ] && [ readlink $file  ]; then # sprawdzić pierwszy znak ścieżki bezwzględnej
         target=$(readlink -f "$file")
         echo "$target"
     fi

@@ -23,4 +23,4 @@
 # Policzyć ile plików zwykłych znajduje się w źródłach systemu Linux.
 # Jako wynik zwrócić tylko i wyłącznie liczbę plików.
 #
-find -type f | wc -l
+find linux-5.11.13/ -type f | wc -l
