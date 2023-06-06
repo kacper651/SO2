@@ -8,7 +8,7 @@ Repozytorium do przechowania zadań na laboratoria oraz projekt z Systemów Oper
 Prosta symulacja problemu ucztujących filozofów (dining philosophers problem) w C++ z użyciem biblioteki ncurses.
 * Zadanie 2:\
 Symulacja rzeczywistego problemu zakleszczenia w przypadku magazynu.
-Link: //TODO
+Link: https://github.com/kacper651/SO2--Projekt2
 
 ## Laboratorium:
 * Lab2 - Podstawy skryptów powłoki Bash
