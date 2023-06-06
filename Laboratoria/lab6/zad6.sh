@@ -27,4 +27,4 @@
 # du --summarize --bytes --apparent-size coreutils-8.32/
 #
 # mechanizm łącz nienazwanych - przetwarzanie potokowe
-find coreutils-8.32 -type f -printf "%s\n" | awk '{sum+=$1} END {print sum/1024/1024}'
+find coreutils-8.32 -printf "%s\n" | awk '{sum+=$1} END {print sum/1024/1024}'

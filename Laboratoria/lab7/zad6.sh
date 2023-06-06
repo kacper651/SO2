@@ -25,4 +25,6 @@
 # nawiasów kwadratowych [].
 # Jako wynik zwrócić same unikalne ścieżki, każdą w nowej linii.
 #
-
+cat dodatkowe/slajdy.tex | grep -E '\\fbox.*\\includegraphics.*' | sed -E 's/.*\{(.*)\}{2}.*/\1/' | sort | uniq
+# wyszukanie linii które zawierają \fbox i \includegraphics
+# wyciągnięcie ścieżki do obrazu (to co w nawiasach klamrowych)

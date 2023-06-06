@@ -22,10 +22,12 @@
 # portów, bez protokołów i bez powtórzeń, każdy wypisany w osobnej linii.
 # (* – wyszukać wszystkie linie, rozpoczynające się od słowa 'syslog')
 #
-#cat dodatkowe/etc-services | grep '^syslog' | cut -d' ' -f2 | cut -d'/' -f1 | sort | uniq
 
-while read line; do
-    if [[ $line =~ ^syslog ]]; then
-        echo $line | cut -d' ' -f2 | cut -d'/' -f1
-    fi
-done < dodatkowe/etc-services | sort | uniq
+
+cat dodatkowe/etc-services | grep '^syslog' | tr -s " " | cut -d'/' -f1 | cut -d' ' -f2 | sort | uniq
+
+# while read line; do
+#     if [[ $line =~ ^syslog ]]; then
+#         echo $line | cut -d' ' -f2 | cut -d'/' -f1
+#     fi
+# done < dodatkowe/etc-services | sort | uniq

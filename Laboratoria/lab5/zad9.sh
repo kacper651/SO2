@@ -21,5 +21,6 @@
 # czyli jaka nazwa występuje najczęściej. Jako wynik zwrócić tylko samą nazwę.
 # Źródła znajdują się w katalogu `coreutils-8.32`.
 #
-most_common_filename=$(find coreutils-8.32 -type f -printf "%f\n" | sort | uniq -c | sort -nr | head -n 1)
+most_common_filename=$(find coreutils-8.32 -type f -printf "%f\n" \
+                        | sort | uniq -c | sort -nr | head -n 1)
 echo $most_common_filename | cut -d ' ' -f 2

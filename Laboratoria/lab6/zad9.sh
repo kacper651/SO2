@@ -25,4 +25,4 @@
 # – proszę zwrócić uwagę, że niektóre słowa zawierają je na końcu i odpowiednio
 # uwzględnić taką sytuację.
 #
-
+awk '{ for (i=1; i<=NF; i++) { gsub(/,|\./, "", $i); print length($i) } }' dodatkowe/nowomowa.txt | sort -n | uniq -c | awk '{ print $2, $1 }'

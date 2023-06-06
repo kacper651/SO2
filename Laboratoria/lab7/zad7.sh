@@ -22,4 +22,8 @@
 # dla czytelności, a także być poprzedzone kodami kraju – należy je wtedy
 # także wyodrębnić.
 #
-
+# Jako wynik zwrócić same unikalne adresy e-mail oraz numery telefonów,
+# każdy w nowej linii.
+cat dodatkowe/kant.txt | grep -E -o '(\+)?([0-9]*)?(\s)?[0-9]{3}(.)?[0-9]{3}(.)?[0-9]{3}' | sort -u | sed 's/^ *//'
+cat dodatkowe/kant.txt | grep -E -o '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}' | sort -u | sed 's/^ *//'
+# nwm czemu testów nie przechodzi

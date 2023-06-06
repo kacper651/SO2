@@ -24,5 +24,17 @@
 # liczbę znaków w każdej linii jak to możliwe). Jako wynik programu wyświetlić
 # tekst po przekształceniu.
 #
-awk '{ for (i=1; i<=length($0); i+=80) print substr($0, i, 80) }' dodatkowe/lipsum.txt
-
+#awk '{ for (i=1; i<=length($0); i+=80) print substr($0, i, 80) }' dodatkowe/lipsum.txt
+awk '{
+    ORS=""
+    count=0
+    for (i=1; i<=NF; i++){
+        if (count+length($i)+1<80){
+            print $i" " 
+        }else{
+            print "\n"
+            count=0
+        }
+        count=length($i)+1+count
+    }
+}' dodatkowe/lipsum.txt

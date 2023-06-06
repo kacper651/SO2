@@ -21,5 +21,6 @@
 # aż do najbliższego znaku >. Jako wynik zwrócić pozostałą zawartość,
 # pomijając linie puste i takie, których jedyną zawartość stanowią spacje.
 #
-cat dodatkowe/cpplint.txt | grep -v -E '^$|^\s+$|<.*>'
-# najpierw puste linie, potem spacje, potem tagi html
+cat dodatkowe/cpplint.txt | awk '{gsub(/<[a-z=/"[:space:]0-9:._]*>/, ""); gsub(/^\s*$/, ""); if (length($0)>0){print}}' 
+# najpierw puste linie, potem spacje, potem tagi html 
+# gsub(/<[^<>]*>/)

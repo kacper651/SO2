@@ -22,6 +22,7 @@
 # Jako wynik proszę zwrócić tylko i wyłącznie liczbę odpowiednich plików.
 # Źródła znajdują się w katalogu `coreutils-8.32`.
 #
-find coreutils-8.32 -type f -exec grep -l '^#include <stdio.h>$' {} \; | wc -l
+#find coreutils-8.32 -type f -exec grep -l '^#include <stdio.h>$' {} \; | wc -l
+grep -r -l '^#include <stdio.h>$' coreutils-8.32 | wc -l
 # przekazywanie wyniku z find do grep -l ({} \;), a następnie zliczenie linii
 # trochę długo się robi, powinno tak być?

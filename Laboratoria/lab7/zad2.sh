@@ -23,4 +23,4 @@
 # specjalnych, takich jak nawiasy klamrowe oraz oczywiście spacje.
 # Każdy znaleziony unikalny odnośnik wypisać w nowej linii.
 #
-cat dodatkowe/slajdy.tex | grep -o -E '[a-z]+\:\/\/[^{}[:space:]]+' | sort | uniq
+cat dodatkowe/slajdy.tex | grep -o -E '[a-z]+://[^{}[:space:]]+' | sort | uniq

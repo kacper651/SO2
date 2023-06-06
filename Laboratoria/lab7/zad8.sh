@@ -20,4 +20,4 @@
 # zawartość, ale podmieniając w locie zapisane tam wartości temperatur ze skali
 # Celsjusza na Fahrenheita: T[°F] = T[°C] * 9/5 + 32.
 #
-
+awk '{sub(/°C/, "°F", $3); print $0}' dodatkowe/sensors.txt

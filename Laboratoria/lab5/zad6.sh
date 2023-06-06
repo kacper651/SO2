@@ -23,4 +23,4 @@
 # Wyświetlić same numery portów, każdy w nowej linii.
 # (* – chodzi o wpisy, zawierające adres 0.0.0.0 w kolumnie 5).
 #
-cat dodatkowe/ss-tulpn | tail -n +2 | cut -d ' ' -f 5 | cut -d ':' -f 2 | sort | uniq
+cat dodatkowe/ss-tulpn | tail -n +2 | tr -s ' ' | cut -d ' ' -f 5 | grep '0.0.0.0' | cut -d ':' -f 2 | sort | uniq
